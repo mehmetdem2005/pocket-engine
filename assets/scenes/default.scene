@@ -1,0 +1,24 @@
+{
+  "name": "Default Scene",
+  "version": 1,
+  "entities": [
+    {
+      "tag": "MainCamera",
+      "transform": { "pos": [0, 0, 10], "rot": [0, 0, 0], "scale": [1, 1, 1] },
+      "camera": {
+        "ortho": true,
+        "zoom": 1.0,
+        "primary": true,
+        "clearColor": [0.15, 0.15, 0.17, 1.0]
+      }
+    },
+    {
+      "tag": "Player",
+      "transform": { "pos": [0, 0, 0], "rot": [0, 0, 0], "scale": [1, 1, 1] },
+      "sprite": {
+        "size": [1, 1],
+        "tint": [1, 1, 1, 1]
+      }
+    }
+  ]
+}

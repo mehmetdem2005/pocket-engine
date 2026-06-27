@@ -1,0 +1,36 @@
+# Render.com Blueprint for PocketEngine backend.
+# Docs: https://render.com/docs/blueprint-spec
+# Deploy via dashboard "New > Blueprint" pointing at this repo + folder, OR via
+# the Render API (see README.md "Deploy via Render API").
+
+services:
+  - type: web
+    name: pocketengine-server
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node src/index.js
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8080
+      - key: CORS_ORIGIN
+        value: "*"
+      # The two below MUST be set in the Render dashboard (or via API at deploy
+      # time). Do NOT commit real secrets here.
+      - key: JWT_SECRET
+        sync: false
+      - key: STORAGE_DIR
+        value: ./data
+    disk:
+      # Render free web services don't get persistent disks — data/ will be
+      # ephemeral. For persistence upgrade to a paid plan and add a disk here:
+      # name: pocketengine-data
+      # mountPath: /opt/render/project/src/data
+      # sizeGB: 1

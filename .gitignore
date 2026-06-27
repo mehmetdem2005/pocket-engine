@@ -1,0 +1,40 @@
+# Build
+build/
+out/
+*.o
+*.obj
+*.a
+*.so
+*.exe
+*.apk
+cmake-build-*/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Secrets — ASLA commit etme
+.env
+.env.local
+secrets/
+*.key
+tokens.txt
+
+# Render
+server/node_modules/
+server/.env
+
+# Asset cache
+.cache/
+*.log
+
+# SQLite
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Termux
+termux-env/

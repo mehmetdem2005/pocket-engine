@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# local env
+.env
+.env.local
+.env.*.local
+
+# runtime data (JSON store + uploaded assets)
+data/
+
+# logs
+*.log
+npm-debug.log*
+
+# os junk
+.DS_Store
+Thumbs.db
